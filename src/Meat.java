@@ -46,5 +46,14 @@
 
         }
 
-
+        @Override
+        public String toString() {
+            return "Meat{" +
+                    "weight=" + weight +
+                    ", id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", manufacturingDate=" + manufacturingDate +
+                    ", cost=" + cost +
+                    "} " + super.toString();
+        }
     }

@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Material {
+public abstract class Material implements Serializable {
     protected String id;
     protected String name;
     protected LocalDate manufacturingDate;
@@ -54,5 +55,15 @@ public abstract class Material {
 
     public double getRealMoney() {
         return getRealMoney();
+    }
+
+    @Override
+    public String toString() {
+        return "Material{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", manufacturingDate=" + manufacturingDate +
+                ", cost=" + cost +
+                '}';
     }
 }

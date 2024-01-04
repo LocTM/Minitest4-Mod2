@@ -47,5 +47,16 @@ public class CrispyFlour extends Material implements Discount {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "CrispyFlour{" +
+                "quantity=" + quantity +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", manufacturingDate=" + manufacturingDate +
+                ", cost=" + cost +
+                "} " + super.toString();
+    }
 }
 

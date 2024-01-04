@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -7,15 +8,25 @@ public class Main {
     public static void main(String[] args) {
         MaterialManager materialManager = new MaterialManager();
 
-        double totalAmount = calculateTotalAmount(materialManager.getMaterials(), 10);
-        System.out.println("Tổng tiền của 10 vật liệu: " + totalAmount);
+//        double totalAmount = calculateTotalAmount(materialManager.getMaterials(), 10);
+//        System.out.println("Tổng tiền của 10 vật liệu: " + totalAmount);
+//
+//        sortMaterialsByCost(materialManager.getMaterials());
+//        System.out.println("Danh sách vật liệu sau khi sắp xếp theo giá:");
+//        displayMaterials(materialManager.getMaterials());
+//
+//        double discountDifference = calculateDiscountDifference(materialManager.getMaterials());
+//        System.out.println("Số chênh lệch giữa chiết khấu và không chiết khấu: " + discountDifference);
+//
+        Material m1 = new Meat("a","k",LocalDate.of(2023,2,3),5,9);
+        List<Material> list = new ArrayList<>();
+        list.add(m1);
+        MaterialManager.writeFile("data.txt", list);
+        list = MaterialManager.readFile("data.txt");
+        for (Material m: list){
+            System.out.println(m);
+        }
 
-        sortMaterialsByCost(materialManager.getMaterials());
-        System.out.println("Danh sách vật liệu sau khi sắp xếp theo giá:");
-        displayMaterials(materialManager.getMaterials());
-
-        double discountDifference = calculateDiscountDifference(materialManager.getMaterials());
-        System.out.println("Số chênh lệch giữa chiết khấu và không chiết khấu: " + discountDifference);
     }
 
     private static double calculateTotalAmount(List<Material> materials, int n) {
@@ -49,4 +60,5 @@ public class Main {
 
         return totalWithoutDiscount - totalWithDiscount;
     }
+
 }
